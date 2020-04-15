@@ -1,8 +1,8 @@
 Appmax - Prova PHP
 =======================================
 
-Como montar o ambiente de desenvolvimento
--------------------------------------------
+Como montar o ambiente
+----------------------
 
 - Clonar o repositório para o ambiente local
 - Acessar o repositório
@@ -20,14 +20,29 @@ git config core.fileMode false
 - Montar o container Docker
 
 ```bash
-# Caso seja ambiente de produção
 docker-compose up -d
 ```
 
-- Executar o composer dentro do container
+- Criar arquivo .env
 
 ```bash
 docker exec -it appmax-www bash
-
-composer install
+cp .env.example .env
 ```
+
+- Executar o composer dentro do container e configurar o Laravel
+
+```bash
+docker exec -it appmax-www bash
+composer install
+npm install
+
+php artisan key:generate
+
+php artisan migrate
+```
+
+- Após a conclusão da montagem do ambiente:
+    - Acessar: http://localhost/
+    - Efetuar registro
+    - Utilizar o sistema!

@@ -50,9 +50,5 @@ RUN echo 'SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1' >> /etc/apache2/a
 
 WORKDIR /var/www/html/appmax
 
-RUN npm install
-
-RUN php artisan migrate
-
 EXPOSE 80
 EXPOSE 8000
