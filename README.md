@@ -1,6 +1,12 @@
 Appmax - Prova PHP
 =======================================
 
+Versões utilizadas
+----------------------
+
+- PHP 7.3
+- MySQL 8.0
+
 Como montar o ambiente
 ----------------------
 
